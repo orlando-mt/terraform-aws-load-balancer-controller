@@ -253,8 +253,8 @@ locals {
         }
       },
       {
-        Effect   = "Allow"
-        Action   = ["elasticloadbalancing:AddTags"]
+        Effect = "Allow"
+        Action = ["elasticloadbalancing:AddTags"]
         Resource = [
           "arn:aws:elasticloadbalancing:*:*:targetgroup/*/*",
           "arn:aws:elasticloadbalancing:*:*:loadbalancer/net/*/*",
