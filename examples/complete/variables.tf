@@ -1,7 +1,6 @@
 variable "region" {
   description = "AWS region"
   type        = string
-  default     = "us-east-1"
 }
 
 variable "cluster_name" {
@@ -22,4 +21,22 @@ variable "oidc_provider_arn" {
 variable "oidc_provider_url" {
   description = "OIDC issuer URL of the cluster"
   type        = string
+}
+
+variable "chart_version" {
+  description = "Chart version to install"
+  type        = string
+  default     = null
+}
+
+variable "replica_count" {
+  description = "Controller replicas"
+  type        = number
+  default     = 2
+}
+
+variable "tags" {
+  description = "Tags applied to the IAM resources"
+  type        = map(string)
+  default     = {}
 }

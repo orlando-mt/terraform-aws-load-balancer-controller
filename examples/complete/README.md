@@ -6,15 +6,15 @@ including the IRSA role and IAM policy.
 The `helm` provider is configured against the cluster with `aws eks
 get-token`, so the cluster must already exist before running this example.
 
+Replace the cluster name, VPC and OIDC values in
+[`terraform.tfvars`](./terraform.tfvars) with your own.
+
 ## Usage
 
 ```bash
 terraform init
-terraform apply \
-  -var "cluster_name=my-cluster" \
-  -var "vpc_id=vpc-xxxx" \
-  -var "oidc_provider_arn=arn:aws:iam::123456789012:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/XXXX" \
-  -var "oidc_provider_url=oidc.eks.us-east-1.amazonaws.com/id/XXXX"
+terraform plan
+terraform apply
 ```
 
 ## Verify

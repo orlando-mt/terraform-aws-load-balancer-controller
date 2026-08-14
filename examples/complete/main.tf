@@ -29,12 +29,8 @@ module "load_balancer_controller" {
   oidc_provider_arn = var.oidc_provider_arn
   oidc_provider_url = var.oidc_provider_url
 
-  # Pin the chart version for reproducible rollouts
-  chart_version = "1.13.0"
-  replica_count = 2
+  chart_version = var.chart_version
+  replica_count = var.replica_count
 
-  tags = {
-    Project   = "example"
-    ManagedBy = "terraform"
-  }
+  tags = var.tags
 }
